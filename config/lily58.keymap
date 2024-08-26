@@ -15,6 +15,13 @@
             #binding-cells = <0>;
             bindings = <&kp EQUAL>, <&kp ESCAPE>;
         };
+
+        rshift_tog_gaming: rshift_tog_gaming {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RSHIFT_TOG_GAMING";
+            #binding-cells = <0>;
+            bindings = <&kp RSHIFT>, <&tog 1>;
+        };
     };
 
     keymap {
@@ -33,7 +40,7 @@
 &eq_esc        &kp N1       &kp N2  &kp N3    &kp N4     &kp N5                                  &kp N6             &kp N7        &kp N8          &kp N9   &kp N0           &kp MINUS
 &kp TAB        &kp Q        &kp D   &kp R     &kp W      &kp B                                   &kp J              &kp F         &kp U           &kp P    &kp SEMICOLON    &kp BACKSLASH
 &kp BACKSPACE  &kp A        &kp S   &kp H     &kp T      &kp G                                   &kp Y              &kp N         &kp E           &kp O    &kp I            &kp SQT
-&kp LSHFT      &mt LCTRL Z  &kp X   &kp M     &kp C      &kp V             &kp F12      &kp F12  &kp K              &kp L         &kp COMMA       &kp DOT  &mt RCTRL SLASH  &kp RSHFT
+&kp LSHFT      &mt LCTRL Z  &kp X   &kp M     &kp C      &kp V             &kp F12      &kp F12  &kp K              &kp L         &kp COMMA       &kp DOT  &mt RCTRL SLASH  &rshift_tog_gaming
                                     &kp LEFT  &kp RIGHT  &kp LG(LEFT_WIN)  &kp SPACE    &kp RET  &kp LG(RIGHT_WIN)  &kp UP_ARROW  &kp DOWN_ARROW
             >;
 
@@ -50,11 +57,11 @@
 
             display-name = "Lower";
             bindings = <
-&kp LCTRL  &kp N1    &kp N2  &kp N3    &kp N4      &kp N5                       &kp N6     &kp N7     &kp N8      &kp N9    &kp N0    &kp MINUS
-&kp TAB    &kp Q     &kp W   &kp E     &kp R       &kp T                        &kp Y      &kp U      &kp I       &kp O     &kp P     &kp -
-&kp LALT   &kp A     &kp S   &kp D     &kp F       &kp G                        &kp H      &kp J      &kp K       &kp L     &kp ;     &kp '
-&kp LSHIFT &Z    &trans  &trans    &trans      &trans     &trans    &trans  &trans     &kp MINUS  &kp KP_PLUS      &kp LBRC  &kp RBRC  &kp PIPE
-                             &trans    &trans      &trans     &trans    &trans  &trans     &trans     &trans
+&kp LCTRL   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                     &kp N6  &kp N7  &kp N8     &kp N9      &kp N0         &kp TILDE
+&kp TAB     &kp Q   &kp W   &kp E   &kp R   &kp T                      &kp Y   &kp U   &kp I      &kp O       &kp P          &kp MINUS
+&kp LALT    &kp A   &kp S   &kp D   &kp F   &kp G                      &kp H   &kp J   &kp K      &kp L       &kp SEMICOLON  &trans
+&kp LSHIFT  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp F12    &trans  &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &trans
+                            &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

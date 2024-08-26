@@ -22,6 +22,13 @@
             #binding-cells = <0>;
             bindings = <&kp RSHIFT>, <&tog 1>;
         };
+
+        ctrl_esc: ctrl_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CTRL_ESC";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>, <&kp ESCAPE>;
+        };
     };
 
     keymap {
@@ -57,10 +64,10 @@
 
             display-name = "Lower";
             bindings = <
-&kp LCTRL   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                     &kp N6  &kp N7  &kp N8     &kp N9      &kp N0         &kp TILDE
+&ctrl_esc   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5                     &kp N6  &kp N7  &kp N8     &kp N9      &kp N0         &kp TILDE
 &kp TAB     &kp Q   &kp W   &kp E   &kp R   &kp T                      &kp Y   &kp U   &kp I      &kp O       &kp P          &kp MINUS
-&kp LSHIFT  &kp A   &kp S   &kp D   &kp F   &kp G                      &kp H   &kp J   &kp K      &kp L       &kp SEMICOLON  &trans
-&kp LALT  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp F12    &trans  &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &trans
+&kp LALT    &kp A   &kp S   &kp D   &kp F   &kp G                      &kp H   &kp J   &kp K      &kp L       &kp SEMICOLON  &trans
+&kp LSHIFT  &kp Z   &kp X   &kp C   &kp V   &kp B   &kp F12    &trans  &kp N   &kp M   &kp COMMA  &kp PERIOD  &kp SLASH      &trans
                             &trans  &trans  &trans  &trans     &trans  &trans  &trans  &trans
             >;
 

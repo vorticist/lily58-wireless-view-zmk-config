@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    behaviors {
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-key-repeat";
+            label = "NEW_BEHAVIOR";
+            #binding-cells = <0>;
+            usage-pages = <HID_USAGE_KEY HID_USAGE_CONSUMER>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -22,11 +31,11 @@
 
             display-name = "Base";
             bindings = <
-&kp EQUAL      &kp N1  &kp N2  &kp N3    &kp N4     &kp N5                                  &kp N6             &kp N7        &kp N8          &kp N9   &kp N0         &kp MINUS
-&kp TAB        &kp Q   &kp D   &kp R     &kp W      &kp B                                   &kp J              &kp F         &kp U           &kp P    &kp SEMICOLON  &kp BACKSLASH
-&kp BACKSPACE  &kp A   &kp S   &kp H     &kp T      &kp G                                   &kp Y              &kp N         &kp E           &kp O    &kp I          &kp SQT
-&kp LSHFT      &kp Z   &kp X   &kp M     &kp C      &kp V             &kp F12      &kp F12  &kp K              &kp L         &kp COMMA       &kp DOT  &kp FSLH       &kp RSHFT
-                               &kp LEFT  &kp RIGHT  &kp LG(LEFT_WIN)  &kp SPACE    &kp RET  &kp LG(RIGHT_WIN)  &kp UP_ARROW  &kp DOWN_ARROW
+&kp EQUAL      &kp N1       &kp N2  &kp N3    &kp N4     &kp N5                                  &kp N6             &kp N7        &kp N8          &kp N9   &kp N0           &kp MINUS
+&kp TAB        &kp Q        &kp D   &kp R     &kp W      &kp B                                   &kp J              &kp F         &kp U           &kp P    &kp SEMICOLON    &kp BACKSLASH
+&kp BACKSPACE  &kp A        &kp S   &kp H     &kp T      &kp G                                   &kp Y              &kp N         &kp E           &kp O    &kp I            &kp SQT
+&kp LSHFT      &mt LCTRL Z  &kp X   &kp M     &kp C      &kp V             &kp F12      &kp F12  &kp K              &kp L         &kp COMMA       &kp DOT  &mt RCTRL SLASH  &kp RSHFT
+                                    &kp LEFT  &kp RIGHT  &kp LG(LEFT_WIN)  &kp SPACE    &kp RET  &kp LG(RIGHT_WIN)  &kp UP_ARROW  &kp DOWN_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;

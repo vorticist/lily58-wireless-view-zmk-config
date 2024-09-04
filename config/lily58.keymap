@@ -29,6 +29,16 @@
             #binding-cells = <0>;
             bindings = <&kp LCTRL>, <&kp ESCAPE>;
         };
+
+        hold_tap: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -48,7 +58,7 @@
 &kp TAB        &kp Q        &kp D   &kp R     &kp W      &kp B                                   &kp J              &kp F         &kp U           &kp P    &kp SEMICOLON    &kp BACKSLASH
 &kp BACKSPACE  &kp A        &kp S   &kp H     &kp T      &kp G                                   &kp Y              &kp N         &kp E           &kp O    &kp I            &mt RIGHT_ALT SQT
 &kp LSHFT      &mt LCTRL Z  &kp X   &kp M     &kp C      &kp V             &kp F12      &kp F12  &kp K              &kp L         &kp COMMA       &kp DOT  &mt RCTRL SLASH  &rshift_tog_gaming
-                                    &kp LEFT  &kp RIGHT  &kp LG(LEFT_WIN)  &kp SPACE    &kp RET  &kp LG(RIGHT_WIN)  &kp UP_ARROW  &kp DOWN_ARROW
+                                    &kp LEFT  &kp RIGHT  &hold_tap 2 LWIN  &kp SPACE    &kp RET  &kp LG(RIGHT_WIN)  &kp UP_ARROW  &kp DOWN_ARROW
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -92,6 +102,16 @@
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+        };
+
+        characters {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans
+            >;
         };
     };
 };
